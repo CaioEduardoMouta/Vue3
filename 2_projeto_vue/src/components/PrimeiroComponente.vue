@@ -7,7 +7,7 @@
 
 <script>
     export default {
-        name: 'PrimeiroComponent',
+        name: 'PrimeiroComponente',
         data() {
             return {
                 nome: "Caio",

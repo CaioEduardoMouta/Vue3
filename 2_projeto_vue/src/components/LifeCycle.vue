@@ -10,6 +10,17 @@ export default {
         return {
             nome: ' Ainda não sei '
         }
+    },
+    created() {
+        setTimeout(() => {
+        this.nome = "Lorem"
+        }, 1000);
+    },
+    mounted() {
+        setTimeout(() => {
+            this.nome = 'Ipsum'
+        }, 2000);
+        
     }
 }
 </script>
