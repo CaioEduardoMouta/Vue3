@@ -15,12 +15,19 @@ export default {
         setTimeout(() => {
         this.nome = "Lorem"
         }, 1000);
+
+        this.lifeCycle()
     },
     mounted() {
         setTimeout(() => {
             this.nome = 'Ipsum'
         }, 2000);
-        
+         this.lifeCycle()
+    },
+    methods: {
+        lifeCycle() {
+            console.log("Executou");
+        }
     }
 }
 </script>
