@@ -2,8 +2,6 @@
     <div>
     <h2> Esta é a descrição da Pessoa: {{ nome }}</h2>
     <Info />
-    <Info />
-    <Info />
     <FormLario />
 
     </div>
