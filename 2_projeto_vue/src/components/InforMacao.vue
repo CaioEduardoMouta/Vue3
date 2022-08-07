@@ -1,23 +1,17 @@
 <template>
-    <div>
-        <p v-if="esta_estudando">Estou trabalhando no momento</p>
-        <p>Ultilizo: </p>
-        <ul>
-            <li>Python</li>
-            <li>PHP</li>
-            <li>Java</li>
-        </ul>
-    </div>
+<div>
+  <p>Estou trabalhando no momento.</p>
+  <p>Utilizo as seguintes tecnologias:</p>
+  <ul>
+    <li>JavaScript</li>
+    <li>PHP</li>
+    <li>Python</li>
+  </ul>
+</div>
 </template>
-
-<script lang="ts">
+<script>
 export default {
-    name: 'InfoMacao',
-    data() {
-        return {
-            esta_estudando: true
-        }
-    }
+  name: 'InforMacao'
+ 
 }
-
 </script>

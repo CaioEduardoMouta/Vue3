@@ -1,8 +1,10 @@
 <template>
-    <input type="submit" value="Enviar">
+       <input type="submit" value="Enviar">
+        
 </template>
-<script lang="ts">
+
+<script>
     export default {
-        name: 'InputText'
+        name: 'SubMit'
     }
 </script>

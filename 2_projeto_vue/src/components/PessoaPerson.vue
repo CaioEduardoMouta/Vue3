@@ -1,28 +1,29 @@
 <template>
     <div>
-        <h2>Esta é a descrição da pessoa: {{ nome }}</h2>
-        <Info />
-        <Form />
+    <h2> Esta é a descrição da Pessoa: {{ nome }}</h2>
+    <Info />
+    <Info />
+    <Info />
+    <FormLario />
+
     </div>
-</template> 
-
-
+</template>
 <script>
-import Info from './InforMacao.vue'
-import Form from './FormLario.vue'
+import Info from "./InforMacao.vue";
+import FormLario from "./FormuLario.vue";
 
 
-    export default {
-        
-        name: 'PessoaPerson',
-        components: {
-            Info,
-            Form
+ export default {
+    name: "PersonPeople",
+    components: {
+    Info,
+    FormLario
+},
+    data() {
+        return {
+            nome: "Mouta"
+        };
     },
-        data() {
-            return {
-                nome: 'Caio'
-            }
-        }
-    }
+    
+} 
 </script>

@@ -1,30 +1,26 @@
-<template>
-<div>
-    <h2>Meu Formulário</h2>
+|<template>
     <form action="">
         <div>
-            <InputText />
+        <InputText />
         </div>
         <div>
-            <InputText />
+        <InputText />
         </div>
         <div>
-            <SubMit />
+        <SubMit />
         </div>
     </form>
-</div>
 </template>
+
 <script>
 import InputText from './form/InputText.vue';
 import SubMit from './form/SubMit.vue';
-
-
-
+    
     export default {
-        name: 'FormLario',
+        name: 'FormuLario',
         components: {
-            InputText,
-            SubMit
-        }
-    }
+    InputText,
+    SubMit
+}
+}
 </script>
