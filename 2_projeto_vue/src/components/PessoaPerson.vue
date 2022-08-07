@@ -1,7 +1,7 @@
 <template>
     <div>
     <h2> Esta é a descrição da Pessoa: {{ nome }}</h2>
-    <Info />
+    <Info :email="email" esta_estudando: true />
     <FormLario />
 
     </div>
@@ -19,9 +19,10 @@ import FormLario from "./FormuLario.vue";
 },
     data() {
         return {
-            nome: "Mouta"
-        };
-    },
+            nome: "Mouta",
+            email: "mouta@email.com"
+        }
+    }
     
 } 
 </script>
