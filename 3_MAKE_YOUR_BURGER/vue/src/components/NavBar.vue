@@ -24,7 +24,7 @@ export default {
         align-items: center;
     }
 
-    #logo-url {
+    #nav #logo-url {
         margin: auto;
         margin-left: 0;
     }
