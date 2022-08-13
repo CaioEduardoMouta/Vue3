@@ -65,7 +65,7 @@ export default {
 
             this.paes = data.paes;
             this.carnes = data.carnes;
-            this.opcionaisdata = data.opcionais;
+            this.opcionais = data.opcionais;
         }
     },
     async createBurger(e) {
@@ -78,6 +78,7 @@ export default {
             status: "Solicitado"
         };
         const dataJson = JSON.stringify(data);
+
         const req = await fetch("http://localhost:3000/burgers", {
             method: "POST",
             header: { "Content-Type": "application/json" },
