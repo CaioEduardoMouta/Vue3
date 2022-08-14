@@ -1,5 +1,6 @@
 <template>
     <div id="burger-table">
+         <MessageComp :msg="msg" v-show="msg"/>
     <div>
         <div id="burger-table-heading">
             <div class="order-id">#:</div>
@@ -23,9 +24,9 @@
                 </ul>
             </div>
             <div>
-                <select name="status" id="status" @change="updateBurger($event, burger.id)">
+                <select name="status" class="status" @change="updateBurger($event, burger.id)">
                     <option value="">Selecione</option>
-                    <option v-for="s in status" :key="s.id" value="s.tipo" :selecte="burger.status == s.tipo">
+                    <option v-for="s in status" :key="s.id" :value="s.tipo" :selecte="burger.status == s.tipo">
                         {{ s.tipo }}
                     </option>
                 </select>
@@ -38,14 +39,19 @@
 </template>
 
 <script>
+    import MessageCompVue from './MessageComp.vue';
     export default {
         name: "Dashboard",
         data() {
             return {
                 burgers: null,
                 burger_id: null,
-                status: []
+                status: [],
+                msg: null
             }
+        },
+        components: {
+            MessageCompVue
         },
         methods: {
           async getPedidos() {
@@ -75,6 +81,10 @@
 
                const res = await req.json();
 
+               this.msg = `Pedido removido com sucesso`;
+
+                setTimeout(() => this.msg = "", 3000);
+
                this.getPedidos();
             },
 
@@ -85,10 +95,17 @@
 
                 const req = await fetch(`http://localhost:3000/burgers/${id}`, {
                     method: "PATCH",
-                    headers: { "Content´Type": "application/json"}
+                    headers: { "Content-Type": "application/json"},
+                    body: dataJson
                 });
 
+
                 const res = await req.json();
+
+                
+               this.msg = `Pedido Nº ${res.id} foi atualizado para ${res.status}`;
+
+                setTimeout(() => this.msg = "", 3000);
 
 
             }

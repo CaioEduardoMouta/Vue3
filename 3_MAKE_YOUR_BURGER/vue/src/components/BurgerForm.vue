@@ -28,8 +28,8 @@
             </div>
             <div id="opcionais-container" class="input-container">
                 <label id="opcionais-title" for="opcionais"> Escolha a opcionais:</label>
-                <div class="checkbox-container" v-for="opcional in opcionais" :key="opcional.id">
-                    <input type="checkbox" name="opcional" v-model="opcionais" value="opcional.tipo">
+                <div class="checkbox-container" v-for="opcional in opcionaisdata" :key="opcional.id">
+                    <input type="checkbox" name="opcionais" v-model="opcionais" value="opcional.tipo">
                 <span>{{ opcional.tipo }}</span>    
                </div>
             </div>
@@ -65,8 +65,8 @@ export default {
 
             this.paes = data.paes;
             this.carnes = data.carnes;
-            this.opcionais = data.opcionais;
-        }
+            this.opcionaisdata = data.opcionais;
+        
     },
     async createBurger(e) {
         e.preventDefault();
@@ -84,7 +84,7 @@ export default {
             header: { "Content-Type": "application/json" },
             body: dataJson
         });
-        const res = await res.json();
+        const res = await req.json();
 
         this.msg = `Pedido Nº ${res.id} realizado com sucesso`
 
@@ -94,6 +94,7 @@ export default {
         this.carne = "";
         this.pao = "";
         this.opcionais = "";
+    }
     },
     mounted() {
         this.getIngredientes();
